@@ -1,0 +1,17 @@
+<script type="text/discourse-plugin" version="0.8.11">
+  cl = I18n.translations.en.js.composer;
+  cl.heading_label = "H";
+  cl.heading_title = "Heading";
+  cl.heading_text = "Heading";
+  
+  api.onToolbarCreate(toolbar => {
+    toolbar.addButton({
+      id: 'heading',
+      group: 'extras',
+      icon: 'header',
+      label: 'composer.heading_label',
+      shortcut: 'Alt+1',
+      perform: e => e.applyList('## ', 'heading_text')
+    });
+  });
+</script>
